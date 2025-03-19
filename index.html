@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AI Text Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+</head>
+<body class="flex">
+    <div class="container flex">
+        <h1>AI Text Detector</h1>
+        <p class="subtitle">Instantly analyze text and detect AI-generated content.</p>
+      
+        <label for="textInput">Enter Text Below:</label>
+        <textarea id="textInput" placeholder="Paste the text or article snippet here..."></textarea>
+      
+        <button onclick="predict()">Analyze</button>
+      
+        <div class="output" id="resultSection" style="display:none;">
+          <div id="resultText">Result: <strong>HUMAN / AI-GENERATED</strong></div>
+          <div id="confidenceScore">Confidence: 87%</div>
+          <p id="adviceText">This is just an AI prediction. Always verify sources and context.</p>
+        </div>
+      </div>
+      
+  <script src="./script.js"></script>
+</body>
+</html>
