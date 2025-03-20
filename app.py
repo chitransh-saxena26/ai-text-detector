@@ -6,7 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, resources={r"/analyze": {"origins": "*"}})  # Allow all origins for /analyze
 
-#label mapping
+# Label mapping
 label_mapping = {
     "LABEL_0": "Human-Written",
     "LABEL_1": "AI-Generated"
@@ -23,7 +23,6 @@ def analyze():
     if not text:
         return jsonify({"error": "No text provided"}), 400
 
-
     result = classifier(text)[0]
     readable_label = label_mapping.get(result["label"], "Unknown")
 
@@ -33,5 +32,5 @@ def analyze():
     })
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=True)
-
+    port = int(os.environ.get("PORT", 10000))  # Match Render logs
+    app.run(host="0.0.0.0", port=port, debug=True)
