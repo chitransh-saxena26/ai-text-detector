@@ -107,16 +107,21 @@ button:hover{
 	color: #444;
 }
 
-/*
+
 @media (max-width: 500px) {
     .container {
     	padding: 25px 20px;
 	}
 	h1 {
-    	font-size: 26px;
+    	font-size: 20px;
+		text-align: center;
+	}
+
+	.subtitle{
+		text-align: center;
 	}
 
 	textarea {
     	height: 120px;
   	}
-} */
+}
